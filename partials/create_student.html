@@ -1,0 +1,146 @@
+<div ng-controller="StudentController">
+    <div class="container">
+        <div class="jumbotron">
+            <h3 class="text-center">Enter Student's Information</h3>
+        </div>
+    </div>
+    <div class="container">
+        <form class="form-horizontal" role="form" name="createStudent" ng-submit="addStudent()" novalidate>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createStudent.firstname.$error.required && createStudent.firstname.$dirty }">
+                    <label for="firstname" class="control-label">First Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First name"
+                        ng-model="student.firstname" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createStudent.firstname.$dirty">
+                      <span ng-show="createStudent.firstname.$error.required" class="text-danger">
+                        Firstname is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createStudent.lastname.$error.required && createStudent.lastname.$dirty }">
+                    <label for="lastname" class="control-label">Last Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last  name"
+                        ng-model="student.lastname" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createStudent.lastname.$dirty">
+                      <span ng-show="createStudent.lastname.$error.required" class="text-danger">
+                        Lastname is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':invalidGenderSelection }">
+                    <label for="lastname" class="control-label">Gender</label>
+                    <div class="input-group">
+                        <select class="form-control" ng-model="student.gender">
+                          <option value="">Select Gender</option>
+                          <option value="male">Male</option>
+                          <option value="female">Female</option>
+                        </select>
+                    </div>
+                    <span ng-show="invalidGenderSelection" class="text-danger">Select the student's gender</span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createStudent.age.$error.required && createStudent.age.$dirty }">
+                    <label for="age" class="control-label">Age</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="age" name="age" placeholder="Enter age"
+                        ng-model="student.age"  ng-pattern="/^[0-9]{1,3}$/" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createStudent.age.$dirty">
+                      <span ng-show="createStudent.age.$error.required" class="text-danger">
+                        Age is required.
+                      </span>
+                      <span ng-show="createStudent.age.$error.pattern" class="text-danger">
+                        Age must be entered in integers
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createStudent.email.$error.required && createStudent.email.$dirty }">
+                    <label for="email" class="control-label">Email</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email-ID"
+                        ng-model="student.email" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createStudent.email.$dirty">
+                      <span ng-show="createStudent.email.$error.required" class="text-danger">
+                        Email-ID is required.
+                      </span>
+                      <span ng-show="createStudent.email.$error.pattern" class="text-danger">
+                        Enter a valid Email address.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createStudent.phone.$error.required && createStudent.phone.$dirty }">
+                    <label for="phone" class="control-label">Phone</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="phone" name="phone" placeholder="Enter Mobile Number"
+                        ng-model="student.phone" ng-pattern="/^[0-9]{8,10}$/" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createStudent.phone.$dirty">
+                      <span ng-show="createStudent.phone.$error.required" class="text-danger">
+                        Phone Number is required.
+                      </span>
+                      <span ng-show="createStudent.phone.$error.pattern" class="text-danger">
+                        Valid phone number is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createStudent.address.$error.required && createStudent.address.$dirty }">
+                    <label for="address" class="control-label">Address</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="address" name="address" placeholder="Enter address"
+                        ng-model="student.address" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createStudent.address.$dirty">
+                      <span ng-show="createStudent.address.$error.required" class="text-danger">
+                        Address is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createStudent.password.$error.required && createStudent.password.$dirty }">
+                    <label for="password" class="control-label">Password</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter Pasword"
+                        ng-model="student.password" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createStudent.password.$dirty">
+                      <span ng-show="createStudent.password.$error.required" class="text-danger">
+                        Password is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-md btn-primary" ng-disabled="createStudent.$invalid">Create new Student</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>

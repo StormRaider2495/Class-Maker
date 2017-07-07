@@ -1,0 +1,31 @@
+.col-sm-6 {
+    height: 6em;
+}
+
+.input-group {
+    width: 70%;
+}
+
+.dropdown-menu>li>a:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background-color: #37474F;
+}
+
+.dropdown-menu>li {
+    padding: 5px;
+}
+
+div.jumbotron h3.text-center {
+    font-family: cursive;
+    font-weight: 600;
+}
+
+.initial-message {
+    border: 2px solid #ddd;
+    margin: 2em 5em;
+    padding: 7em 2em;
+    font-family: sans-serif;
+    text-align: center;
+    border-radius: 5px;
+}

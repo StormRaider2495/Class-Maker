@@ -1,0 +1,23 @@
+{
+  "name": "ClassMaker",
+  "authors": [
+    "StormRaider2495 <arunit95@gmail.com>"
+  ],
+  "description": "Class Making App using Angular JS",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.6.4",
+    "angular-ui-router": "ui-router#^1.0.3+hybrid-2.0.0-2",
+    "font-awesome": "^4.7.0"
+  }
+}

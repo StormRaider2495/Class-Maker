@@ -1,0 +1,26 @@
+<div ng-controller="UserController">
+
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:void(0)" aria-haspopup="true" aria-expanded="true">
+                    <span class="glyphicon glyphicon-menu-hamburger"></span>
+                    Select User Type
+                    <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu text-center">
+                    <li><a ui-sref="user.student">Students</a></li>
+                    <li><a ui-sref="user.teacher">Teachers</a></li>
+                    <li><a ui-sref="user.admin">Admin</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="initial-message" ng-hide="isNotFirstView">
+      SELECT A TAB TO ENTER THEIR CORRESPONDING DETAILS AND CREATE THEIR OWN USER ID.
+    </div>
+    <div ui-view="student"></div>
+    <div ui-view="teacher"></div>
+    <div ui-view="admin"></div>
+
+</div>

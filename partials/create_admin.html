@@ -1,0 +1,83 @@
+<div ng-controller="AdminController">
+    <div class="container">
+      <div class="jumbotron">
+        <h3 class="text-center">Enter New Admin's Information</h3>
+      </div>
+    </div>
+    <div class="container">
+        <form class="form-horizontal" role="form" name="createAdmin"  ng-submit="addAdmin()" novalidate>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createAdmin.firstname.$error.required && createAdmin.firstname.$dirty }">
+                    <label for="firstname" class="control-label">First Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Enter First name"
+                        ng-model="admin.firstname" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createAdmin.firstname.$dirty">
+                      <span ng-show="createAdmin.firstname.$error.required" class="text-danger">
+                        Firstname is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createAdmin.lastname.$error.required && createAdmin.lastname.$dirty }">
+                    <label for="lastname" class="control-label">Last Name</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Enter Last  name"
+                        ng-model="admin.lastname" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createAdmin.lastname.$dirty">
+                      <span ng-show="createAdmin.lastname.$error.required" class="text-danger">
+                        Lastname is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createAdmin.email.$error.required && createAdmin.email.$dirty }">
+                    <label for="email" class="control-label">Email</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email-ID"
+                        ng-model="admin.email" ng-pattern="/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createAdmin.email.$dirty">
+                      <span ng-show="createAdmin.email.$error.required" class="text-danger">
+                        Email-ID is required.
+                      </span>
+                      <span ng-show="createAdmin.email.$error.pattern" class="text-danger">
+                        Enter a valid Email address.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group" ng-class="{'has-error':createAdmin.password.$error.required && createAdmin.password.$dirty }">
+                    <label for="password" class="control-label">Password</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" id="password" name="password" placeholder="Enter Pasword"
+                        ng-model="admin.password" autocomplete="off" required>
+                    </div>
+                    <span ng-show="createAdmin.password.$dirty">
+                      <span ng-show="createAdmin.password.$error.required" class="text-danger">
+                        Password is required.
+                      </span>
+                    </span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="pull-right">
+                    <button type="submit" class="btn btn-md btn-primary" ng-disabled="createAdmin.$invalid">Create new Admin</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
