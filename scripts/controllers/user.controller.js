@@ -1,9 +1,21 @@
 'use strict';
 classMaker
-    .controller("LoginController", function($scope, userSvc, $rootScope) {
+    .controller("LoginController", function($scope, $rootScope, $state, loadDB) {
         'ngInject';
-        userSvc.loadDB();
+        $scope.loadDB = loadDB;
+        $scope.login = {
+            "mail": "",
+            "pass": "",
+            "remember": false
+        };
+        $scope.loginUser = function() {
+            // if(valid === true){
+            console.log("in");
+            console.log($scope.login);
+            $state.transitionTo('app.user');
+        }
     })
+
     .controller("UserController", function($scope, userSvc, $rootScope) {
         'ngInject';
         var users = [
@@ -14,7 +26,9 @@ classMaker
         $scope.users = users;
         $scope.invalidGenderSelection = false;
         $rootScope.isNotFirstView = false;
+
     })
+
     .controller("StudentController", function($scope, userSvc, $rootScope) {
         'ngInject';
         $rootScope.isNotFirstView = true;

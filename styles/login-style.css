@@ -144,7 +144,7 @@ label a {
 }
 
 .cd-user-modal-container .cd-switcher li {
-    width: 50%;
+    width: 94%;
     float: left;
     text-align: center;
 }
@@ -174,7 +174,7 @@ label a {
 @media only screen and (min-width: 600px) {
     .cd-user-modal-container {
         margin: 0 auto;
-        margin-top: 6.8em;
+        margin-top: 10em;
     }
     .cd-user-modal-container .cd-switcher a {
         height: 70px;

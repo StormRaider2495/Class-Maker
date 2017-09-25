@@ -8,28 +8,33 @@ classMaker
 
             $stateProvider
                 // state route for home page
-                .state('app',{
-                  url:'/',
-                  views:{
-                    content:{
-                      templateUrl:'partials/login.html',
-                      controller:'LoginController'
+                .state('app', {
+                    url: '/',
+                    views: {
+                        'content': {
+                            templateUrl: 'partials/login.html',
+                            controller: 'LoginController'
+                        }
+                    },
+                    resolve : {
+                      loadDB : function(userSvc){
+                        return userSvc.loadDB()
+                      }
                     }
-                  }
                 })
                 .state('app.user', {
                     url: '/user',
                     views: {
-                        'header':{
-                          templateUrl:'partials/header.html'
+                        'header': {
+                            templateUrl: 'partials/header.html'
                         },
-                        'content': {
+                        'content@': {
                             templateUrl: 'partials/user.html',
                             controller: 'UserController'
                         }
                     }
                 })
-                .state('user.student', {
+                .state('app.user.student', {
                     views: {
                         'student': {
                             templateUrl: 'partials/create_student.html',
@@ -37,7 +42,7 @@ classMaker
                         }
                     }
                 })
-                .state('user.teacher', {
+                .state('app.user.teacher', {
                     views: {
                         'teacher': {
                             templateUrl: 'partials/create_teacher.html',
@@ -45,7 +50,7 @@ classMaker
                         }
                     }
                 })
-                .state('user.admin', {
+                .state('app.user.admin', {
                     views: {
                         'admin': {
                             templateUrl: 'partials/create_admin.html',

@@ -12,6 +12,7 @@ classMaker.service("userSvc", function() {
         password: "1234",
         usertype: "superAdmin"
     };
+    self.superAdmin = superAdmin;
 
     self.loadDB = function() {
         // CREATING INDEXED DB STRUCTURE

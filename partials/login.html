@@ -1,44 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <title>DLS|Pluus+</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/icon" href="img/dls.ico" />
-
-    <!-- Jquery Link -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
-    <!-- Google Glyphicons Link -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Font Awesome Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <!-- Bootstrap CDN Link -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    <!-- Google Font Cookie -->
-    <link href="https://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower|PT+Sans+Narrow|Pacifico|Rancho|Ubuntu" rel="stylesheet">
-
-    <!-- My Stylesheets -->
-
-    <link rel="stylesheet" type="text/css" href="styles/login-style.css">
-
-</head>
-
-<body>
-
+<section class="body-wrapper" ng-controller="LoginController">
     <!--  TOP NAVIGATION BAR STARTS  -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a class="navbar-brand site-name" href="#">Class <span> Maker </span> </a>
+                <a class="navbar-brand site-name" href="#">C <span> M </span> </a>
             </div>
         </div>
     </nav>
@@ -52,23 +17,23 @@
         </ul>
         <!--  log in form -->
         <div id="cd-login" class="is-selected">
-            <form class="cd-form" action="login_DLS.php" method="POST">
+            <form class="cd-form" name="loginForm" ng-submit="loginUser()" novalidate>
+
+              <p class="fieldset">
+                  <label class="image-replace cd-email" for="signinEmail">Email</label>
+                  <input class="full-width has-padding has-border" id="signinEmail" type="email" name="mail" ng-model="login.mail" placeholder="Email" required>
+                  <span class="cd-error-message">Error message here!</span>
+              </p>
 
                 <p class="fieldset">
-                    <label class="image-replace cd-email" for="signin-email">E-mail</label>
-                    <input class="full-width has-padding has-border" id="signinEmail" type="email" name="uname" placeholder="E-mail" required>
+                    <label class="image-replace cd-password" for="signinPassword">Password</label>
+                    <input class="full-width has-padding has-border" id="signinPassword" type="password" name="pass" ng-model="login.pass" placeholder="Password" required>
+                    <!-- <a href="javascript:void(0)" class="show-password">Show</a> -->
                     <span class="cd-error-message">Error message here!</span>
                 </p>
 
                 <p class="fieldset">
-                    <label class="image-replace cd-password" for="signin-password">Password</label>
-                    <input class="full-width has-padding has-border" id="signinPassword" type="password" name="pass" placeholder="Password" required>
-                    <a href="javascript:void(0)" class="show-password">Show</a>
-                    <span class="cd-error-message">Error message here!</span>
-                </p>
-
-                <p class="fieldset">
-                    <input type="checkbox" id="remember-me" checked>
+                    <input type="checkbox" id="remember-me" name="remember" ng-model="login.remember" checked>
                     <label for="remember-me">Remember me</label>
                 </p>
 
@@ -77,7 +42,7 @@
                 </p>
             </form>
 
-            <p class="cd-form-bottom-message"><a href="#0">Forgot your password?</a></p>
+            <p class="cd-form-bottom-message"><a href="javascript:void(0)">Forgot your password?</a></p>
         </div>
         <!-- cd-login form ends -->
 
@@ -87,8 +52,6 @@
     <!-- cd-user-modal-container -->
 
     <!-- LOGIn & Registration eNDs -->
-
-
 
     <!--  FOOTER STARTS  -->
 
@@ -100,8 +63,4 @@
     </footer>
 
     <!-- FOOTER ENDS -->
-</body>
-
-
-
-</html>
+</section>
