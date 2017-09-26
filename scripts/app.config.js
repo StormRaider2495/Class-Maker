@@ -15,12 +15,12 @@ classMaker
                             templateUrl: 'partials/login.html',
                             controller: 'LoginController'
                         }
-                    },
-                    resolve : {
-                      loadDB : function(userSvc){
-                        return userSvc.loadDB()
-                      }
                     }
+                    // ,resolve: {
+                    //     dbInitialize: function(userSvc) {
+                    //         return userSvc.loadDB();
+                    //     }
+                    // }
                 })
                 .state('app.user', {
                     url: '/user',

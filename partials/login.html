@@ -1,5 +1,4 @@
 <section class="body-wrapper" ng-controller="LoginController">
-    <!--  TOP NAVIGATION BAR STARTS  -->
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -7,11 +6,8 @@
             </div>
         </div>
     </nav>
-    <!-- TOP NAVIGATION BAR ENDS -->
 
-    <!-- LOGIn & Registration STaRTS -->
     <div class="cd-user-modal-container">
-        <!-- this is the container wrapper -->
         <ul class="cd-switcher">
             <li><a href="javascript:void(0)" class="selected">Sign In</a></li>
         </ul>
@@ -19,16 +15,16 @@
         <div id="cd-login" class="is-selected">
             <form class="cd-form" name="loginForm" ng-submit="loginUser()" novalidate>
 
-              <p class="fieldset">
-                  <label class="image-replace cd-email" for="signinEmail">Email</label>
-                  <input class="full-width has-padding has-border" id="signinEmail" type="email" name="mail" ng-model="login.mail" placeholder="Email" required>
-                  <span class="cd-error-message">Error message here!</span>
-              </p>
+                <p class="fieldset" ng-class="{'has-error':loginForm.mail.$invalid}">
+                    <label class="image-replace cd-email" for="signinEmail">Email</label>
+                    <input class="full-width has-padding has-border" id="signinEmail" type="email" name="mail" ng-model="login.mail" placeholder="Email" required>
+                    <span class="cd-error-message help-block" ng-show="userForm.mail.$invalid && !userForm.mail.$pristine">Error message here!</span>
+                </p>
 
                 <p class="fieldset">
                     <label class="image-replace cd-password" for="signinPassword">Password</label>
                     <input class="full-width has-padding has-border" id="signinPassword" type="password" name="pass" ng-model="login.pass" placeholder="Password" required>
-                    <!-- <a href="javascript:void(0)" class="show-password">Show</a> -->
+                    <a href="javascript:void(0)" class="show-password">Show</a>
                     <span class="cd-error-message">Error message here!</span>
                 </p>
 
@@ -44,16 +40,10 @@
 
             <p class="cd-form-bottom-message"><a href="javascript:void(0)">Forgot your password?</a></p>
         </div>
-        <!-- cd-login form ends -->
-
-
+        <!-- login form ends -->
 
     </div>
-    <!-- cd-user-modal-container -->
 
-    <!-- LOGIn & Registration eNDs -->
-
-    <!--  FOOTER STARTS  -->
 
     <footer class="footer-distributed text-center">
         <div class="footer-center">
@@ -62,5 +52,4 @@
         </div>
     </footer>
 
-    <!-- FOOTER ENDS -->
 </section>

@@ -1,4 +1,5 @@
 'use strict';
+
 classMaker.service("userSvc", function() {
 
     var self = this;
@@ -32,6 +33,7 @@ classMaker.service("userSvc", function() {
         };
         request.onsuccess = function() {
             // var db = request.result;
+            return request;
         };
     }
 
